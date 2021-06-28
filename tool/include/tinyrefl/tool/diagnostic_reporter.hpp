@@ -3,7 +3,7 @@
 
 #include <cstdint>
 #include <fmt/core.h>
-#include <model/ast.pb.h>
+#include <ast.pb.h>
 
 namespace tinyrefl
 {

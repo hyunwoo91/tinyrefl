@@ -5,7 +5,7 @@
 #include <cppast/cpp_file.hpp>
 #include <cppast/cpp_namespace.hpp>
 #include <cstdint>
-#include <model/ast.pb.h>
+#include <ast.pb.h>
 #include <string>
 #include <tinyrefl/tool/backends/cppast/datareader.hpp>
 #include <tinyrefl/tool/unique_id.hpp>

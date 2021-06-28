@@ -4,7 +4,7 @@
 #include <cppast/cpp_attribute.hpp>
 #include <cppast/cpp_entity.hpp>
 #include <cstdint>
-#include <model/ast.pb.h>
+#include <ast.pb.h>
 #include <tinyrefl/tool/backends/cppast/datareader.hpp>
 
 namespace tinyrefl

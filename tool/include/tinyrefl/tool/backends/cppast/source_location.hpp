@@ -3,7 +3,7 @@
 
 #include <cppast/cpp_entity.hpp>
 #include <cppast/diagnostic.hpp>
-#include <model/ast.pb.h>
+#include <ast.pb.h>
 #include <tinyrefl/tool/backends/cppast/datareader.hpp>
 
 namespace tinyrefl

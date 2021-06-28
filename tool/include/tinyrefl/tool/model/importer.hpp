@@ -1,7 +1,7 @@
 #ifndef TINYREFL_TOOL_MODEL_IMPORTER_HPP
 #define TINYREFL_TOOL_MODEL_IMPORTER_HPP
 
-#include <model/ast.pb.h>
+#include <ast.pb.h>
 #include <type_safe/optional.hpp>
 
 namespace tinyrefl

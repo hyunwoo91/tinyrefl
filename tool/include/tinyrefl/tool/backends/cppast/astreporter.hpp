@@ -4,7 +4,7 @@
 #include <cassert>
 #include <cppast/cpp_entity.hpp>
 #include <fmt/format.h>
-#include <model/ast.pb.h>
+#include <ast.pb.h>
 #include <tinyrefl/tool/diagnostic_reporter.hpp>
 
 namespace tinyrefl

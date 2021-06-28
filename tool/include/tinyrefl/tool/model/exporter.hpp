@@ -1,7 +1,7 @@
 #ifndef TINYREFL_TOOL_MODEL_EXPORTER_HPP
 #define TINYREFL_TOOL_MODEL_EXPORTER_HPP
 
-#include <model/ast.pb.h>
+#include <ast.pb.h>
 #include <string>
 #include <type_safe/optional.hpp>
 
