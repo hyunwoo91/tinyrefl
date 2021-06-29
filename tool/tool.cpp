@@ -235,6 +235,10 @@ void visit_ast_and_generate(
                 full_display_name,
                 entity_id);
 
+            if (entity.kind() == cppast::cpp_entity_kind::class_t && !cppast::get_definition(index, entity).has_value())
+            {
+                return;
+            }
             serialization_queue.push_back(
                 registration_serializer.serialize_registration(entity));
         }
