@@ -105,16 +105,18 @@ void generate_attribute_registry(
     {
         const auto& attribute = key_value.second;
 
-        fmt::print(
-            os,
-            "#ifndef TINYREFL_ATTRIBUTE_{hash}_REGISTERED\n"
-            "    #define TINYREFL_ATTRIBUTE_{hash}_REGISTERED\n"
-            "    TINYREFL_REGISTER_ATTRIBUTE(({full_attribute}), ({type}), ({args}))\n"
-            "#endif // TINYREFL_ATTRIBUTE_{hash}_REGISTERED\n",
-            fmt::arg("hash", attribute.hash()),
-            fmt::arg("full_attribute", attribute.full_attribute()),
-            fmt::arg("type", attribute.type()),
-            fmt::arg("args", attribute.arguments()));
+        if (attribute.full_attribute().find("std::attributes") == std::string::npos) {
+            fmt::print(
+                    os,
+                    "#ifndef TINYREFL_ATTRIBUTE_{hash}_REGISTERED\n"
+                    "    #define TINYREFL_ATTRIBUTE_{hash}_REGISTERED\n"
+                    "    TINYREFL_REGISTER_ATTRIBUTE(({full_attribute}), ({type}), ({args}))\n"
+                    "#endif // TINYREFL_ATTRIBUTE_{hash}_REGISTERED\n",
+                    fmt::arg("hash", attribute.hash()),
+                    fmt::arg("full_attribute", attribute.full_attribute()),
+                    fmt::arg("type", attribute.type()),
+                    fmt::arg("args", attribute.arguments()));
+        }
     }
 }
 
