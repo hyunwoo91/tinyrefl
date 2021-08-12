@@ -94,7 +94,6 @@ else()
     find_package(llvm_support QUIET)
     find_package(cppfs QUIET)
     find_package(type_safe QUIET)
-    find_package(spdlog QUIET)
     find_package(Protobuf ${TINYREFL_PROTOBUF_VERSION} QUIET)
 
     if(fmt_FOUND)
@@ -305,24 +304,14 @@ else()
         endif()
     endif()
 
-    if(NOT spdlog_FOUND)
-        message(STATUS "tinyrefl-tool build using spdlog from sources")
+    message(STATUS "tinyrefl-tool build using spdlog from sources")
 
-        set(SPDLOG_INSTALL
+    set(SPDLOG_INSTALL
             OFF
             CACHE INTERNAL "")
-        external_dependency(spdlog ${TINYREFL_SPDLOG_URL}
-                            ${TINYREFL_SPDLOG_VERSION})
-        add_library(tinyrefl_externals_spdlog ALIAS spdlog)
-    else()
-        message(
-            STATUS "tinyrefl-tool build using spdlog from find_package() module"
-        )
-
-        add_library(tinyrefl_externals_spdlog INTERFACE)
-        target_link_libraries(tinyrefl_externals_spdlog
-                              INTERFACE spdlog::spdlog)
-    endif()
+    external_dependency(spdlog ${TINYREFL_SPDLOG_URL}
+            ${TINYREFL_SPDLOG_VERSION})
+    add_library(tinyrefl_externals_spdlog ALIAS spdlog)
 
     if(NOT Protobuf_FOUND)
         message(STATUS "tinyrefl-tool build using protobuf from sources")
